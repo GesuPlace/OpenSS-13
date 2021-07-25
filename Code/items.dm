@@ -1608,7 +1608,7 @@
 	if ((user != M && istype(M, /mob/human)))
 		for(var/mob/O in viewers(M, null))
 			O.show_message(text("\red [] is forcing [] to swallow the []", user, M, src), 1)
-		var/obj/equip_e/human/O = new /obj/equip_e/human(  )
+		var/obj/equip_e/human/O = new /obj/equip_e/human()
 		O.source = user
 		O.target = M
 		O.item = src
@@ -1729,7 +1729,7 @@
 			user.client_mob() << "\red You don't have the dexterity to do this!"
 			return
 	if (istype(M, /mob/human))
-		var/obj/equip_e/human/O = new /obj/equip_e/human(  )
+		var/obj/equip_e/human/O = new /obj/equip_e/human()
 		O.source = user
 		O.target = M
 		O.item = user.equipped()
@@ -1741,7 +1741,7 @@
 			O.process()
 			return
 	else if (istype(M, /mob/monkey))
-		var/obj/equip_e/monkey/O = new /obj/equip_e/monkey(  )
+		var/obj/equip_e/monkey/O = new /obj/equip_e/monkey()
 		O.source = user
 		O.target = M
 		O.item = user.equipped()
@@ -2010,7 +2010,7 @@
 
 	var/t1 = text("<HTML><HEAD></HEAD><TT>Amount Left: [] <BR>", src.amount)
 	var/counter = 1
-	var/list/L = list(  )
+	var/list/L = list()
 	L["rods"] = "metal rods (makes 2)"
 	L["stool"] = "stool"
 	L["chair"] = "chair"
@@ -2569,8 +2569,8 @@
 
 
 		if (get_dist(tar_loc, cur_loc) > 1)
-			var/list/close = list(  )
-			var/list/far = list(  )
+			var/list/close = list()
+			var/list/far = list()
 			for(var/T in oview(2, tar_loc))
 				if (get_dist(T, tar_loc) <= 1)
 					close += T
@@ -2595,7 +2595,7 @@
 				src.waterleft -= 0.25
 				src.last_use = 1
 			else
-				var/list/possible = list(  )
+				var/list/possible = list()
 				for(var/T in oview(1, tar_loc))
 					possible += T
 				possible += tar_loc
@@ -2635,7 +2635,7 @@
 
 /obj/item/weapon/pen/sleepypen/New()
 
-	src.chem = new /obj/substance/chemical(  )
+	src.chem = new /obj/substance/chemical()
 	src.chem.maximum = 5
 	var/datum/chemical/s_tox/C = new /datum/chemical/s_tox( null )
 	C.moles = C.density * 5 / C.molarmass
@@ -3079,7 +3079,7 @@
 
 /obj/item/weapon/storage/proc/return_inv()
 
-	var/list/L = list(  )
+	var/list/L = list()
 
 	// RM*****
 	L += src.contents
@@ -3384,13 +3384,13 @@
 
 /obj/item/weapon/storage/New()
 
-	src.boxes = new /obj/screen/storage(  )
+	src.boxes = new /obj/screen/storage()
 	src.boxes.name = "storage"
 	src.boxes.master = src
 	src.boxes.icon_state = "block"
 	src.boxes.screen_loc = "7,7 to 10,8"
 	src.boxes.layer = 19
-	src.closer = new /obj/screen/close(  )
+	src.closer = new /obj/screen/close()
 	src.closer.master = src
 	src.closer.icon_state = "x"
 	src.closer.layer = 20
@@ -4156,7 +4156,7 @@
 /obj/item/weapon/radio/intercom/send_crackle()
 
 	if (src.listening)
-		return list(  )
+		return list()
 	return
 
 /obj/item/weapon/radio/intercom/sendm(msg)
@@ -4237,8 +4237,8 @@
 
 	if (!( src.wires & 4 ))
 		return
-	var/list/receive = list(  )
-	var/list/crackle = list(  )
+	var/list/receive = list()
+	var/list/crackle = list()
 	for(var/obj/item/weapon/radio/R in world)
 		if (((src.freq == 0 || R.accept_rad(src, msg)) && src.freq != 5))
 			for(var/i in R.sendm(msg))
@@ -4434,7 +4434,7 @@
 
 /obj/item/weapon/dropper/New()
 
-	src.chem = new /obj/substance/chemical(  )
+	src.chem = new /obj/substance/chemical()
 	src.chem.maximum = 5
 	..()
 	return
@@ -4709,7 +4709,7 @@
 
 /obj/item/weapon/syringe/New()
 
-	src.chem = new /obj/substance/chemical(  )
+	src.chem = new /obj/substance/chemical()
 	src.chem.maximum = 15
 	..()
 	return
@@ -4724,7 +4724,7 @@
 			return
 	if (user)
 		if (istype(M, /mob/human))
-			var/obj/equip_e/human/O = new /obj/equip_e/human(  )
+			var/obj/equip_e/human/O = new /obj/equip_e/human()
 			O.source = user
 			O.target = M
 			O.item = src
@@ -4827,7 +4827,7 @@
 
 /obj/item/weapon/hand_tele/attack_self(mob/user)
 
-	var/list/L = list(  )
+	var/list/L = list()
 	for(var/obj/machinery/teleport/hub/R in world)
 		var/obj/machinery/computer/teleporter/com = locate(/obj/machinery/computer/teleporter, locate(R.x - 2, R.y, R.z))
 		if (istype(com, /obj/machinery/computer/teleporter))
@@ -4931,7 +4931,7 @@
 
 /obj/item/weapon/bottle/New()
 
-	src.chem = new /obj/substance/chemical(  )
+	src.chem = new /obj/substance/chemical()
 	..()
 	return
 

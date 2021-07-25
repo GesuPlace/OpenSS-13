@@ -81,7 +81,7 @@
 	var/siphon_status = 0.0
 	var/air_stat = 0.0
 
-	var/list/connectors = list(  )
+	var/list/connectors = list()
 
 
 /datum/air_tunnel/air_tunnel1
@@ -166,7 +166,7 @@
 	//name = "poll"
 	var/question = null
 
-	var/list/answers = list(  )
+	var/list/answers = list()
 
 /datum/data
 	var/name = "data"
@@ -183,7 +183,7 @@
 	name = "record"
 	size = 5.0
 
-	var/list/fields = list(  )
+	var/list/fields = list()
 
 /datum/data/text
 	name = "text"
@@ -358,9 +358,9 @@
 	var/cameraFollow = null
 	var/now_pushing = null
 
-	var/list/organs = list(  )
-	var/list/grabbed_by = list(  )
-	var/list/requests = list(  )
+	var/list/organs = list()
+	var/list/grabbed_by = list()
+	var/list/requests = list()
 
 	var/list/mapobjs = list()
 
@@ -416,8 +416,8 @@
 	var/h_style_r = "hair_a"
 	weight = 2500000.0
 
-	var/list/body_standing = list(  )
-	var/list/body_lying = list(  )
+	var/list/body_standing = list()
+	var/list/body_lying = list()
 
 /mob/monkey
 	name = "monkey"
@@ -618,8 +618,8 @@
 
 	var/list/avail_colors = list( "red", "blue", "green", "yellow", "black", "white" )
 	var/list/avail_bases = list( "Engine", "CR", "Lounge", "Atmo", "Medical" )
-	var/list/pickers_left = list(  )
-	var/list/players_left = list(  )
+	var/list/pickers_left = list()
+	var/list/players_left = list()
 
 /obj/d_girders
 	name = "Displaced girders"
@@ -631,9 +631,9 @@
 /obj/datacore
 	name = "datacore"
 
-	var/list/medical = list(  )
-	var/list/general = list(  )
-	var/list/security = list(  )
+	var/list/medical = list()
+	var/list/general = list()
+	var/list/security = list()
 
 /obj/dna
 	name = "dna"
@@ -905,7 +905,7 @@
 	name = "card"
 	w_class = 1.0
 
-	var/list/files = list(  )
+	var/list/files = list()
 
 /obj/item/weapon/card/data
 	name = "Data Disk"
@@ -2254,7 +2254,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	name = "mobl"
 	var/master = null
 
-	var/list/container = list(  )
+	var/list/container = list()
 
 /obj/m_tray
 	name = "morgue tray"
@@ -2564,7 +2564,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	name = "shut controller"
 	var/moving = null
 
-	var/list/parts = list(  )
+	var/list/parts = list()
 
 /obj/shuttle
 	name = "shuttle"
@@ -2623,7 +2623,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	name = "chemical"
 	maximum = null
 
-	var/list/chemicals = list(  )		// contains /datum/chemical
+	var/list/chemicals = list()		// contains /datum/chemical
 
 
 /obj/substance/gas
@@ -2649,7 +2649,7 @@ Total SMES charging rate should not exceed total power generation rate, or an ov
 	var/base = null
 	var/max_players = 20.0
 
-	var/list/members = list(  )
+	var/list/members = list()
 
 /obj/test
 	name = "test"

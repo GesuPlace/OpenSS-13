@@ -118,7 +118,7 @@
 			src.max_players = input(usr, "What is the max number of players on this team?", null, null)  as num
 			src.max_players = max(src.max_players, 1)
 		if (href_list["captain"])
-			var/L = list(  )
+			var/L = list()
 			for(var/mob/human/H in world)
 				if (H.client || H.currentDrone!=null)
 					L += H
@@ -1161,8 +1161,8 @@
 						world.log<<"Unknown setting in config.txt: [cfgvar]"
 
 	vote = new /datum/vote()
-	main_hud = new /obj/hud(  )
-	main_hud2 = new /obj/hud/hud2(  )
+	main_hud = new /obj/hud()
+	main_hud2 = new /obj/hud/hud2()
 	SS13_airtunnel = new /datum/air_tunnel/air_tunnel1()
 	..()
 	sleep(50)
@@ -1175,19 +1175,19 @@
 			H.memory += text("<B>Secret Base Nuke Code</B>: []<BR>", nuke_code)
 	sleep(50)
 
-	plmaster = new /obj/overlay(  )
+	plmaster = new /obj/overlay()
 	plmaster.icon = 'plasma.dmi'
 	plmaster.icon_state = "onturf"
 	plmaster.layer = FLY_LAYER
-	slmaster = new /obj/overlay(  )
+	slmaster = new /obj/overlay()
 	slmaster.icon = 'plasma.dmi'
 	slmaster.icon_state = "sl_gas"
 	slmaster.layer = FLY_LAYER
-	liquidplmaster = new /obj/overlay(  )
+	liquidplmaster = new /obj/overlay()
 	liquidplmaster.icon = 'plasma.dmi'
 	liquidplmaster.icon_state = "liquid"
 	liquidplmaster.layer = FLY_LAYER
-	cellcontrol = new /datum/control/cellular(  )
+	cellcontrol = new /datum/control/cellular()
 	spawn( 0 )
 		cellcontrol.process()
 		return
@@ -1505,7 +1505,7 @@
 					if ((src.target && src.target.stat != 2))
 						traitorwin = 0
 				if("theft")
-					var/list/L = list(  )
+					var/list/L = list()
 					if (src.killer)
 						L += src.killer.contents
 						for(var/obj/item/weapon/storage/S in src.killer.contents)
@@ -1640,7 +1640,7 @@
 					world << "<B>The Syndicate recovered the abandoned auth. disk but detonation of SS13 was averted.</B> Next time, don't lose the disk!"
 		if("virus")
 			var/humanwin = 1
-			var/list/shuttle = list(  )
+			var/list/shuttle = list()
 			for(var/mob/human/M in world)
 				var/T = M.loc
 				if (istype(T, /turf))
@@ -1648,9 +1648,9 @@
 						shuttle += M
 						if (M.virus > 0)
 							humanwin = 0
-			var/dead = list(  )
-			var/alive = list(  )
-			var/escapees = list(  )
+			var/dead = list()
+			var/alive = list()
+			var/escapees = list()
 			for(var/mob/M in world)
 				if (M.stat == 2)
 					if (M.cliented())
@@ -1680,7 +1680,7 @@
 			for(var/I in dead)
 				world << text("<FONT size = 1>[]</FONT>", I)
 		if("meteor")
-			var/list/L = list(  )
+			var/list/L = list()
 			for(var/mob/M in world)
 				if (M.cliented())
 					if (M.stat != 2)
@@ -1807,7 +1807,7 @@
 			return
 
 		else
-			var/list/L = list(  )
+			var/list/L = list()
 			for(var/mob/M in world)
 				if (M.cliented())
 					if (M.stat != 2)
@@ -1914,7 +1914,7 @@
 			world << "<B>The current game mode is - Nuclear Emergency!</B>"
 			world << "<B>A Syndicate Strike Force is approaching SS13!</B>"
 			world << "A nuclear explosive was being transported by Nanotrasen to a military base. The transport ship mysteriously lost contact with Space Traffic Control (STC). About that time a strange disk was discovered around SS13. It was identified by Nanotrasen as a nuclear auth. disk and now Syndicate Operatives have arrived to retake the disk and detonate SS13! Also, most likely Syndicate star ships are in the vicinity so take care not to lose the disk!\n<B>Syndicate</B>: Reclaim the disk and detonate the nuclear bomb anywhere on SS13.\n<B>Personell</B>: Hold the disk and <B>escape with the disk</B> on the shuttle!"
-			var/list/mobs = list(  )
+			var/list/mobs = list()
 			for(var/mob/human/M in world)
 				if ((M.cliented() && M.start))
 					mobs += M
@@ -2156,7 +2156,7 @@
 			spawn(0) extend_process()
 		if("monkey")
 			spawn(50)
-				var/list/mobs = list(  )
+				var/list/mobs = list()
 				for(var/mob/human/M in world)
 					if ((M.cliented() && M.start))
 						mobs += M
@@ -2240,7 +2240,7 @@
 			spawn(0) src.extend_process()
 		if("virus")
 			spawn(50)
-				var/list/mobs = list(  )
+				var/list/mobs = list()
 				for(var/mob/human/M in world)
 					if ((M.cliented() && M.start))
 						mobs += M

@@ -645,14 +645,14 @@
 
 /obj/hud/proc/instantiate()
 
-	src.adding = list(  )
-	src.other = list(  )
-	src.intents = list(  )
-	src.mon_blo = list(  )
-	src.m_ints = list(  )
-	src.mov_int = list(  )
-	src.vimpaired = list(  )
-	src.darkMask = list(  )
+	src.adding = list()
+	src.other = list()
+	src.intents = list()
+	src.mon_blo = list()
+	src.m_ints = list()
+	src.mov_int = list()
+	src.vimpaired = list()
+	src.darkMask = list()
 	src.g_dither = new src.h_type( src )
 	src.g_dither.screen_loc = "1,1 to 15,15"
 	src.g_dither.name = "Mask"
@@ -1811,7 +1811,7 @@
 
 /mob/human/proc/UpdateDamage()
 
-	var/list/L = list(  )
+	var/list/L = list()
 	for(var/t in src.organs)
 		if (istype(src.organs[text("[]", t)], /obj/item/weapon/organ/external))
 			L += src.organs[text("[]", t)]
@@ -1829,16 +1829,16 @@
 /mob/human/proc/UpdateDamageIcon()
 
 
-	var/list/L = list(  )
+	var/list/L = list()
 	for(var/t in src.organs)
 		if (istype(src.organs[text("[]", t)], /obj/item/weapon/organ/external))
 			L += src.organs[text("[]", t)]
 	//src.body_standing = null
 	del(src.body_standing)
-	src.body_standing = list(  )
+	src.body_standing = list()
 	//src.body_lying = null
 	del(src.body_lying)
-	src.body_lying = list(  )
+	src.body_lying = list()
 	src.bruteloss = 0
 	src.fireloss = 0
 	for(var/obj/item/weapon/organ/external/O in L)
@@ -2304,8 +2304,8 @@
 	del(F)
 	//F2 = null
 	del(F2)
-	src.face = new /image(  )
-	src.face2 = new /image(  )
+	src.face = new /image()
+	src.face2 = new /image()
 	src.face.icon = I
 	src.face2.icon = I2
 	//I = null
@@ -3075,7 +3075,7 @@
 		src.savefile_load()
 		ShowChoices()
 		var/area/A = locate(/area/start)
-		var/list/L = list(  )
+		var/list/L = list()
 		for(var/turf/T in A)
 			if(T.isempty() )
 				L += T
@@ -3342,7 +3342,7 @@
 				if (locate(/obj/move, T))
 					T = locate(/obj/move, T)
 				var/turf_total = T.oxygen + T.poison + T.sl_gas + T.co2 + T.n2
-				var/obj/substance/gas/G = new /obj/substance/gas(  )
+				var/obj/substance/gas/G = new /obj/substance/gas()
 				G.maximum = 10000
 				if (src.internal)
 					src.internal.process(src, G)
@@ -3897,7 +3897,7 @@
 	if ((!( message ) || istype(src.wear_mask, /obj/item/weapon/clothing/mask/muzzle)))
 		return
 	if (src.stat < 2)
-		var/list/L = list(  )
+		var/list/L = list()
 		var/pre = copytext(message, 1, 4)
 		var/italics = 0
 		var/obj_range = null
@@ -4438,7 +4438,7 @@
 					if (((H.head && H.head.flags & 4) || ((H.wear_mask && !( H.wear_mask.flags & 32 )) || ((src.head && src.head.flags & 4) || (src.wear_mask && !( src.wear_mask.flags & 32 ))))))
 						H.client_mob() << "\blue <B>Remove that mask!</B>"
 						return
-					var/obj/equip_e/human/O = new /obj/equip_e/human(  )
+					var/obj/equip_e/human/O = new /obj/equip_e/human()
 					O.source = M
 					O.target = src
 					O.s_loc = M.loc
@@ -4813,7 +4813,7 @@
 		src.machine = null
 		src << browse(null, t1)
 	if ((href_list["item"] && !( usr.stat ) && usr.canmove && !( usr.restrained() ) && get_dist(src, usr) <= 1))
-		var/obj/equip_e/human/O = new /obj/equip_e/human(  )
+		var/obj/equip_e/human/O = new /obj/equip_e/human()
 		O.source = usr
 		O.target = src
 		O.item = usr.equipped()
@@ -5108,7 +5108,7 @@
 		return
 	else
 		if (!( ctf ))
-			ctf = new /obj/ctf_assist(  )
+			ctf = new /obj/ctf_assist()
 		ctf.show_screen(usr)
 	return
 
@@ -5140,12 +5140,12 @@
 
 	going = 1
 	if (!ticker)
-		ticker = new /datum/control/gameticker(  )
+		ticker = new /datum/control/gameticker()
 		spawn( 0 )
 			if(config.logadmin) world.log << "ADMIN: [src.key] used start_now"
 			ticker.process()
 			return
-		data_core = new /obj/datacore(  )
+		data_core = new /obj/datacore()
 
 /mob/proc/mute(mob/M as mob in world)
 	set category = "Admin"
@@ -5384,7 +5384,7 @@
 				G.affecting.ret_grab(L, 1)
 		if (!( flag ))
 			if (L.master == src)
-				var/list/temp = list(  )
+				var/list/temp = list()
 				temp += L.container
 				//L = null
 				del(L)
@@ -5463,7 +5463,7 @@
 		if(config.loggame) world.log << "GAME: [usr.key] AM failed due to disconnect."
 		return
 
-	var/mob/human/M = new /mob/human(  )
+	var/mob/human/M = new /mob/human()
 	if(!src.client)
 		if(config.loggame) world.log << "GAME: [usr.key] AM failed due to disconnect."
 		del(M)
@@ -5938,7 +5938,7 @@
 		src.machine = null
 		src.client_mob() << browse(null, t1)
 	if ((href_list["item"] && !( usr.stat ) && !( usr.restrained() ) && get_dist(src, usr) <= 1))
-		var/obj/equip_e/monkey/O = new /obj/equip_e/monkey(  )
+		var/obj/equip_e/monkey/O = new /obj/equip_e/monkey()
 		O.source = usr
 		O.target = src
 		O.item = usr.equipped()
@@ -6352,7 +6352,7 @@
 		else
 			src.start = 1
 			var/A = locate(/area/start)
-			var/list/L = list(  )
+			var/list/L = list()
 			for(var/turf/T in A)
 				if(T.isempty() )
 					L += T
@@ -6476,7 +6476,7 @@
 			if (locate(/obj/move, T))
 				T = locate(/obj/move, T)
 			var/turf_total = T.oxygen + T.poison + T.sl_gas + T.co2 + T.n2
-			var/obj/substance/gas/G = new /obj/substance/gas(  )
+			var/obj/substance/gas/G = new /obj/substance/gas()
 			G.maximum = 10000
 			if (src.internal)
 				src.internal.process(src, G)
@@ -7003,7 +7003,7 @@
 	if ((!( message ) || istype(src.wear_mask, /obj/item/weapon/clothing/mask/muzzle)))
 		return
 	if (src.stat < 2)
-		var/list/L = list(  )
+		var/list/L = list()
 		var/pre = copytext(message, 1, 4)
 		var/italics = 0
 		var/obj_range = null
@@ -7235,7 +7235,7 @@
 			n = null
 
 	if (locate(/obj/item/weapon/grab, locate(/obj/item/weapon/grab, thisMob.grabbed_by.len)))
-		var/list/grabbing = list(  )
+		var/list/grabbing = list()
 		if (istype(thisMob.l_hand, /obj/item/weapon/grab))
 			var/obj/item/weapon/grab/G = thisMob.l_hand
 			grabbing += G.affecting

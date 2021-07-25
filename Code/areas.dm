@@ -247,7 +247,7 @@
 
 	..()
 	sleep(1)
-	var/obj/shut_controller/S = new /obj/shut_controller(  )
+	var/obj/shut_controller/S = new /obj/shut_controller()
 	shuttles += S
 	for(var/obj/move/O in src)
 		S.parts += O
@@ -365,4 +365,3 @@
 /area/proc/calc_lighting()
 	if(lightswitch && power_light)
 		used_light += numturfs * LIGHTING_POWER
-

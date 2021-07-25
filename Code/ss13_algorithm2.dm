@@ -1,7 +1,7 @@
 
 /proc/SetupOccupationsList()
 
-	var/list/new_occupations = list(  )
+	var/list/new_occupations = list()
 	for(var/occupation in occupations)
 		if (!( new_occupations.Find(occupation) ))
 			new_occupations[occupation] = 1
@@ -12,22 +12,22 @@
 
 /proc/DivideOccupations()
 
-	var/list/occupations1 = list(  )
-	var/list/occupations2 = list(  )
-	var/list/occupations3 = list(  )
-	var/list/final_occupations = list(  )
-	var/list/unassigned_mobs = list(  )
+	var/list/occupations1 = list()
+	var/list/occupations2 = list()
+	var/list/occupations3 = list()
+	var/list/final_occupations = list()
+	var/list/unassigned_mobs = list()
 	var/list/occupation_choices = occupations.Copy()
 	occupation_choices = shuffle(occupation_choices)
 	for(var/occupation in occupations + assistant_occupations)
-		occupations1[occupation] = list(  )
-		occupations2[occupation] = list(  )
-		occupations3[occupation] = list(  )
-		final_occupations[occupation] = list(  )
-	occupations1["Captain"] = list(  )
-	occupations2["Captain"] = list(  )
-	occupations3["Captain"] = list(  )
-	final_occupations["Captain"] = list(  )
+		occupations1[occupation] = list()
+		occupations2[occupation] = list()
+		occupations3[occupation] = list()
+		final_occupations[occupation] = list()
+	occupations1["Captain"] = list()
+	occupations2["Captain"] = list()
+	occupations3["Captain"] = list()
+	final_occupations["Captain"] = list()
 	for(var/mob/human/M in world)
 		if ((!( M.client ) || !( M.start ) || M.already_placed))
 		else
@@ -77,7 +77,7 @@
 
 	captain = final_occupations["Captain"]
 	if (captain.len==0)
-		var/list/contenders = list(  )
+		var/list/contenders = list()
 		for(var/mob/human/M in world)
 			if (M.client)
 				if (M.start)
@@ -218,7 +218,7 @@
 	if (!( shufflelist ))
 		return
 	var/list/old_list = shufflelist.Copy()
-	var/list/new_list = list(  )
+	var/list/new_list = list()
 	while(old_list.len)
 		var/item = old_list[rand(1, old_list.len)]
 		new_list += item
@@ -605,4 +605,3 @@
 					subject.attack_ai(M)
 				else
 					subject:attack_self(M)
-

@@ -37,7 +37,7 @@ obj/machinery/freezer
 
 	New()
 		..()
-		var/obj/overlay/O1 = new /obj/overlay(  )
+		var/obj/overlay/O1 = new /obj/overlay()
 		O1.icon = 'Cryogenic2.dmi'
 		O1.icon_state = "canister connector_0"
 		O1.pixel_y = -16.0
@@ -253,7 +253,7 @@ obj/machinery/freezer
 		var/counter = 0
 
 		for(var/obj/item/weapon/flasks/F in src.contents)
-			var/obj/overlay/O = new /obj/overlay(  )
+			var/obj/overlay/O = new /obj/overlay()
 			O.icon = F.icon
 			O.icon_state = F.icon_state
 			O.pixel_y = -17.0
@@ -389,6 +389,3 @@ obj/machinery/freezer
 
 		src.updateDialog()
 		return
-
-
-

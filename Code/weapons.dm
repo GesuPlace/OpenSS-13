@@ -406,7 +406,7 @@
 	else
 		//If it's not timing, reset the icon so it doesn't look like it's still about to go off.
 		src.c_state(0)
-	
+
 	spawn( 10 )
 		src.process()
 		return
@@ -610,7 +610,7 @@
 	else
 		user.show_message("\blue The timer is now unsecured! The igniter will not work.", 1)
 	src.part2.status = src.status
-	
+
 	src.add_fingerprint(user)
 	return
 
@@ -974,7 +974,7 @@
 	if (result==0)
 		usr.client_mob() << "You can't reach [src]."
 		return
-	
+
 	usr.show_message("\blue The proximity sensor has been armed with a delay of 15 seconds.", 1)
 
 	src.icon_state = "m_i_ptank2"
@@ -1027,7 +1027,7 @@
 /obj/item/weapon/assembly/m_i_ptank/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
 	if ((istype(W, /obj/item/weapon/wrench) && !( src.status )))
-		var/obj/item/weapon/assembly/prox_ignite/R = new /obj/item/weapon/assembly/prox_ignite(  )
+		var/obj/item/weapon/assembly/prox_ignite/R = new /obj/item/weapon/assembly/prox_ignite()
 		R.part1 = src.part1
 		R.part2 = src.part2
 		R.loc = src.loc
@@ -1110,7 +1110,7 @@
 /obj/item/weapon/assembly/t_i_ptank/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
 	if ((istype(W, /obj/item/weapon/wrench) && !( src.status )))
-		var/obj/item/weapon/assembly/time_ignite/R = new /obj/item/weapon/assembly/time_ignite(  )
+		var/obj/item/weapon/assembly/time_ignite/R = new /obj/item/weapon/assembly/time_ignite()
 		R.part1 = src.part1
 		R.part2 = src.part2
 		R.loc = src.loc
@@ -1207,7 +1207,7 @@
 /obj/item/weapon/assembly/r_i_ptank/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
 	if ((istype(W, /obj/item/weapon/wrench) && !( src.status )))
-		var/obj/item/weapon/assembly/rad_ignite/R = new /obj/item/weapon/assembly/rad_ignite(  )
+		var/obj/item/weapon/assembly/rad_ignite/R = new /obj/item/weapon/assembly/rad_ignite()
 		R.part1 = src.part1
 		R.part2 = src.part2
 		R.loc = src.loc

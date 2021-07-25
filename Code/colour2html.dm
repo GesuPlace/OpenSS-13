@@ -22,7 +22,7 @@
 	var/F = new /savefile( "s_html.sav" )
 	F["html_colours"] >> html_colours
 	if (!( html_colours ))
-		html_colours = list(  )
+		html_colours = list()
 	if (!( html_colours.len ))
 		HTMLAssociate("aliceblue", "f0f8ff")
 		HTMLAssociate("antiquewhite", "faebd7")

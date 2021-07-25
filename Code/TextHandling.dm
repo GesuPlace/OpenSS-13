@@ -55,7 +55,7 @@
 
 	var/textlength = length(text)
 	var/separatorlength = length(separator)
-	var/textList = new /list(  )
+	var/textList = new /list()
 	var/searchPosition = 1
 	var/findPosition = 1
 	while(1)
@@ -75,7 +75,7 @@
 
 	var/textlength = length(text)
 	var/separatorlength = length(separator)
-	var/textList = new /list(  )
+	var/textList = new /list()
 	var/searchPosition = 1
 	var/findPosition = 1
 	while(1)

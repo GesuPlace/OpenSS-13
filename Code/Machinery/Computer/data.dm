@@ -12,7 +12,7 @@ obj/machinery/computer/data
 	icon_state = "computer"
 
 	var
-		list/topics = list(  )			// An associative list of entries and content
+		list/topics = list()			// An associative list of entries and content
 
 
 	// Display the list of entries
@@ -127,4 +127,3 @@ obj/machinery/computer/data
 				usr.client_mob() << "<B>Research Log:</B>"
 				..()
 				return
-

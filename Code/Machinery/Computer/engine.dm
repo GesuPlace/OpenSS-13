@@ -22,7 +22,7 @@
 
 	New()
 		if (!( engine_eject_control ))
-			engine_eject_control = new /datum/engine_eject(  )
+			engine_eject_control = new /datum/engine_eject()
 		..()
 
 		spawn(5)
@@ -56,8 +56,8 @@
 	// AI interact
 	attack_ai(mob/user)
 		return src.attack_hand(user)
-		
-	
+
+
 	// Human interact
 	// Show interaction window
 

@@ -72,7 +72,7 @@ obj/machinery/autolathe
 			dat = text("<TT>[]</TT><BR><BR><A href='?src=\ref[];temp=1'>Clear Screen</A>", src.temp, src)
 		else
 			dat = text("<B>Metal Amount:</B> [] cm<sup>3</sup> (MAX: 150,000)<BR>\n<FONT color = blue><B>Glass Amount:</B></FONT> [] cm<sup>3</sup> (MAX: 75,000)<HR>", src.m_amount, src.g_amount)
-			var/list/L = list(  )
+			var/list/L = list()
 
 			L["pipe"] = "Straight pipe (7500 cc)"
 			L["bpipe"] = "Bent pipe (7500 cc)"

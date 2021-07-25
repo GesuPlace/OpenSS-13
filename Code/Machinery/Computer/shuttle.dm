@@ -11,7 +11,7 @@ obj/machinery/computer/shuttle
 
 	var
 		auth_need = 3						// number of authorizations needed to launch shuttle early
-		list/authorized = list(  )			// list of names of those authorizing the early launch
+		list/authorized = list()			// list of names of those authorizing the early launch
 		allowed								// ID card job assignmented needed to authorize (none)
 		access = "2000"						// ID card access level needed to authorize
 
@@ -97,11 +97,11 @@ obj/machinery/computer/shuttle
 					ticker.timeleft = 100
 					//src.authorized = null
 					del(src.authorized)
-					src.authorized = list(  )
+					src.authorized = list()
 			if("Repeal")
 				src.authorized -= W.registered
 				world << text("\blue <B>Alert: [] authorizations needed until shuttle is launched early</B>", src.auth_need - src.authorized.len)
 			if("Abort")
 				world << "\blue <B>All authorizations to shorting time for shuttle launch have been revoked!</B>"
 				src.authorized.len = 0
-				src.authorized = list(  )
+				src.authorized = list()

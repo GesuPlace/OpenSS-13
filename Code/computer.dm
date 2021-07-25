@@ -62,7 +62,7 @@
 
 	if(stat & (NOPOWER|BROKEN) ) return
 
-	var/list/L = list(  )
+	var/list/L = list()
 	user.machine = src
 	for(var/obj/machinery/camera/C in world)
 		if (C.network == src.network)
@@ -104,9 +104,9 @@
 
 	for(var/mob/human/H in world)
 		if ((H.start && !( findtext(H.rname, "Syndicate ", 1, null) )))
-			var/datum/data/record/G = new /datum/data/record(  )
-			var/datum/data/record/M = new /datum/data/record(  )
-			var/datum/data/record/S = new /datum/data/record(  )
+			var/datum/data/record/G = new /datum/data/record()
+			var/datum/data/record/M = new /datum/data/record()
+			var/datum/data/record/S = new /datum/data/record()
 			var/obj/item/weapon/card/id/C = H.wear_id
 			if (C)
 				G.fields["rank"] = C.assignment

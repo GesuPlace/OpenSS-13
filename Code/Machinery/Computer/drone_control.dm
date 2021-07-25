@@ -21,7 +21,7 @@
 		if (istype(user, /mob/drone))
 			return
 
-		var/list/L = list(  )
+		var/list/L = list()
 		user.machine = src
 
 		var/numDrones = 0

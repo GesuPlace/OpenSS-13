@@ -325,7 +325,7 @@ Important Notes:<BR>
 					src.screen = 4
 				else if (href_list["new"])
 					if ((istype(src.active1, /datum/data/record) && !( istype(src.active2, /datum/data/record) )))
-						var/datum/data/record/R = new /datum/data/record(  )
+						var/datum/data/record/R = new /datum/data/record()
 						R.fields["name"] = src.active1.fields["name"]
 						R.fields["id"] = src.active1.fields["id"]
 						R.name = text("Medical Record #[]", R.fields["id"])

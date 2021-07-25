@@ -795,7 +795,7 @@ heat is conserved between exchanges
 			if (istype(W, /datum/chemical/waste))
 				W.moles += C.moles
 			else
-				W = new /datum/chemical/waste(  )
+				W = new /datum/chemical/waste()
 				S.chemicals["waste-l"] = W
 				W.moles += C.moles
 			//C = null
@@ -806,7 +806,7 @@ heat is conserved between exchanges
 			if (istype(W, /datum/chemical/waste))
 				W.moles += src.moles
 			else
-				W = new /datum/chemical/waste(  )
+				W = new /datum/chemical/waste()
 				S.chemicals["waste-l"] = W
 				W.moles += src.moles
 			src.moles = 0

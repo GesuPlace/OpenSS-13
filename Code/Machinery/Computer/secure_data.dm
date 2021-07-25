@@ -322,7 +322,7 @@ obj/machinery/computer/secure_data
 																	src.screen = 4
 																else
 																	if (href_list["new_r"])
-																		var/datum/data/record/G = new /datum/data/record(  )
+																		var/datum/data/record/G = new /datum/data/record()
 																		G.fields["name"] = "New Record"
 																		G.fields["id"] = text("[]", add_zero(num2hex(rand(1, 1.6777215E7)), 6))
 																		G.fields["rank"] = "Unassigned"
@@ -337,7 +337,7 @@ obj/machinery/computer/secure_data
 																	else
 																		if (href_list["new"])
 																			if ((istype(src.active1, /datum/data/record) && !( istype(src.active2, /datum/data/record) )))
-																				var/datum/data/record/R = new /datum/data/record(  )
+																				var/datum/data/record/R = new /datum/data/record()
 																				R.fields["name"] = src.active1.fields["name"]
 																				R.fields["id"] = src.active1.fields["id"]
 																				R.name = text("Security Record #[]", R.fields["id"])
@@ -430,4 +430,3 @@ obj/machinery/computer/secure_data
 																									src.printing = null
 		src.add_fingerprint(usr)
 		src.updateDialog()
-

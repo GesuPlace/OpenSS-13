@@ -98,7 +98,7 @@
 /obj/move/proc/FindTurfs()
 
 
-	var/list/L = list(  )
+	var/list/L = list()
 	for(var/dir in src.Neighbors())
 		var/turf/T = get_step(src.loc, dir)
 
@@ -631,9 +631,9 @@
 
 /turf/proc/FindTurfs()
 
-	var/list/L = list(  )
+	var/list/L = list()
 	if (locate(/obj/move, src))
-		return list(  )
+		return list()
 	for(var/dir in src.Neighbors())
 		var/turf/T = get_step(src, dir)
 		//*****RM
@@ -857,9 +857,9 @@
 
 
 	//if (locate(/obj/move, src))
-	//	return list(  )
+	//	return list()
 
-	var/list/L = list(  )
+	var/list/L = list()
 	if(airN)
 		L += linkN
 	if(airS)
@@ -1623,7 +1623,7 @@ turf/proc/tot_old_gas()
 
 /turf/proc/FindCondTurfs()
 
-	var/list/L = list(  )
+	var/list/L = list()
 	if(condN)
 		L += linkN
 	if(condS)
@@ -1647,4 +1647,3 @@ turf/proc/tot_old_gas()
 		if(8)
 			return condW
 	return 0
-

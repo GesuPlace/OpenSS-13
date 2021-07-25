@@ -173,7 +173,7 @@
 		return 0
 	if ((num < 1 || src.gas.tot_gas() < num))
 		return 0
-	var/obj/substance/gas/G = new /obj/substance/gas(  )
+	var/obj/substance/gas/G = new /obj/substance/gas()
 	G.transfer_from(src.gas, num)
 	if (G.oxygen >= 100)
 		return 1
@@ -2647,5 +2647,3 @@
 	src.poison = 7.5E7
 	res_vars()
 	return
-
-

@@ -569,7 +569,7 @@
 		if (src.stat >= 1)
 			return
 		if (src.stat < 2)
-			var/list/L = list(  )
+			var/list/L = list()
 			var/pre = copytext(message, 1, 4)
 			var/italics = 0
 			var/obj_range = null
@@ -645,7 +645,7 @@
 			src.machine = null
 			src.client_mob() << browse(null, t1)
 		//if ((href_list["item"] && !( usr.stat ) && !( usr.restrained() ) && get_dist(src, usr) <= 1))
-			/*var/obj/equip_e/monkey/O = new /obj/equip_e/monkey(  )
+			/*var/obj/equip_e/monkey/O = new /obj/equip_e/monkey()
 			O.source = usr
 			O.target = src
 			O.item = usr.equipped()
@@ -737,7 +737,7 @@
 
 
 
-		var/list/L = list(  )
+		var/list/L = list()
 		user.machine = src
 		for(var/obj/machinery/camera/C in world)
 			if (C.network == src.network)

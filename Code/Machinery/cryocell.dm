@@ -34,13 +34,13 @@ obj/machinery/cryo_cell
 	New()
 		..()
 		src.layer = 5
-		O1 = new /obj/overlay(  )
+		O1 = new /obj/overlay()
 		O1.icon = 'Cryogenic2.dmi'
 		O1.icon_state = "cellconsole"
 		O1.pixel_y = -32.0
 		O1.layer = 4
 
-		O2 = new /obj/overlay(  )
+		O2 = new /obj/overlay()
 		O2.icon = 'Cryogenic2.dmi'
 		O2.icon_state = "cellbottom"
 		O2.pixel_y = -32.0

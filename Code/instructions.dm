@@ -86,10 +86,10 @@
 				reg_dna[text("[]", H.primary.uni_identity)] = H.rname
 		return
 	var/mob/human/M = usr
-	var/list/start_loc = list(  )
+	var/list/start_loc = list()
 
 	var/area/A = locate(/area/arrival/start)
-	var/list/L = list(  )
+	var/list/L = list()
 	for(var/turf/T in A)
 		if(T.isempty())
 			L += T
