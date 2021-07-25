@@ -75,3 +75,4 @@ mode.txt
 motd.txt
 players/*
 !players/.gitignore
+s_html.sav
