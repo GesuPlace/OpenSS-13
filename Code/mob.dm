@@ -236,7 +236,7 @@
 /obj/proc/hide(h)
 	return
 
-/obj/item/weapon/grab/proc/throw()
+/obj/item/weapon/grab/proc/_throw()
 
 	if(src.affecting)
 		src.affecting.density = 1
@@ -559,7 +559,7 @@
 			usr.sleeping = !( usr.sleeping )
 		if("rest")
 			usr.resting = !( usr.resting )
-		if("throw")
+		if("_throw")
 			if ((!( usr.stat ) && usr.canmove && isturf(usr.loc) && !( usr.restrained() )))
 				usr.throw_item_v()
 		if("drop")
@@ -714,7 +714,7 @@
 	using.layer = 19
 	src.adding += using
 	using = new src.h_type( src )
-	using.name = "throw"
+	using.name = "_throw"
 	using.icon_state = "act_throw"
 	using.screen_loc = "9,1"
 	using.layer = 19
@@ -4919,7 +4919,7 @@
 			return
 		W.loc = src.loc
 		if (istype(W, /obj/item/weapon/grab))
-			W:throw()
+			W:_throw()
 		else
 			W.dropped(src)
 		if (W)

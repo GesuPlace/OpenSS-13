@@ -103,7 +103,7 @@
 		src.aiIcon.name = "AI"
 		src.selector.name = "Selected Tool"
 		src.dropButton.name = "drop"
-		src.throwButton.name = "throw"
+		src.throwButton.name = "_throw"
 
 		src.gripperIcon.screen_loc = "1,1"
 		src.wirecuttersIcon.screen_loc = "2,1"
